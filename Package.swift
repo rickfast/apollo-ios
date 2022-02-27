@@ -19,6 +19,9 @@ let package = Package(
       name: "ApolloAPI",
       targets: ["ApolloAPI"]),
     .library(
+      name: "ApolloBatch",
+      targets: ["ApolloBatch"]),
+    .library(
       name: "ApolloUtils",
       targets: ["ApolloUtils"]),
     .library(
@@ -56,6 +59,15 @@ let package = Package(
       exclude: [
         "Info.plist",
         "CodegenV1"
+      ]),
+    .target(
+      name: "ApolloBatch",
+      dependencies: [
+        "Apollo",
+        "ApolloUtils"
+      ],
+      exclude: [
+        "Info.plist"
       ]),
     .target(
       name: "ApolloUtils",
